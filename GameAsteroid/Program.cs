@@ -16,7 +16,17 @@ namespace GameAsteroid
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Form game_form = new Form();
+            // Screen.PrimaryScreen.WorkingArea.Height
+            game_form.Width = 800;
+            game_form.Height = 600;
+
+            game_form.Show();
+
+            System.Threading.Thread.Sleep(10000);
+
+            Application.Run(game_form);
         }
     }
 }
