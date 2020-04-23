@@ -12,7 +12,7 @@ namespace TestConsole
             return _Name;
         }
 
-        public string SetName(string Name)
+        public void SetName(string Name)
         {
             _Name = Name;
         }
