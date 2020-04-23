@@ -24,9 +24,13 @@ namespace GameAsteroid
 
             game_form.Show();
 
-            System.Threading.Thread.Sleep(10000);
+            Game.Initialize(game_form);
+            Game.Draw();
 
             Application.Run(game_form);
+
+            //System.Threading.Thread.Sleep(10000);
+            //Application.Run(game_form);
         }
     }
 }
