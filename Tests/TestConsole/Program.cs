@@ -13,7 +13,8 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            Logger log = new TextFileLogger("text.log");
+            // Logger log = new TextFileLogger("text.log");
+            Logger log = new ConsoleLogger();
 
             log.LogInformation("Message1");
             log.LogWarning("Info message");
