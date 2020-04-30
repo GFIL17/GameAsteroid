@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameAsteroid
+namespace GameAsteroid.VisualObjects
 {
     internal abstract class ImageObejct : VisualObject
     {
