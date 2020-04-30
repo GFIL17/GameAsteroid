@@ -9,10 +9,11 @@ namespace GameAsteroid.VisualObjects
 {
     internal class Bullet : VisualObject
     {
-        private const int _BulletSizeX = 20;
-        private const int _BulletSizeY = 5;
+        private const int __BulletSizeX = 20;
+        private const int __BulletSizeY = 5;
+        private const int __BulletSpeed = 20;
         public Bullet(int Position)
-            : base(new Point(0, Position), Point.Empty, new Size(_BulletSizeX, _BulletSizeY))
+            : base(new Point(0, Position), Point.Empty, new Size(__BulletSizeX, __BulletSizeY))
         {
         }
 
@@ -25,7 +26,7 @@ namespace GameAsteroid.VisualObjects
 
         public override void Update()
         {
-            _Position = new Point(_Position.X + 20, _Position.Y);
+            _Position = new Point(_Position.X + __BulletSpeed, _Position.Y);
         }
     }
 }
