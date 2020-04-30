@@ -22,5 +22,10 @@ namespace GameAsteroid.VisualObjects
             g.FillEllipse(Brushes.Red, rect);
             g.DrawEllipse(Pens.White, rect);
         }
+
+        public override void Update()
+        {
+            _Position = new Point(_Position.X + 20, _Position.Y);
+        }
     }
 }

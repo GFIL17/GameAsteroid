@@ -76,7 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\miscellaneous.png" />
-    <Content Include="src\miscellaneous.png" />
+    <Content Include="src\miscellaneous.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

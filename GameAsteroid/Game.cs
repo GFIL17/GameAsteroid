@@ -19,6 +19,8 @@ namespace GameAsteroid
         private static BufferedGraphics __Buffer;
 
         private static VisualObject[] __GameObjects;
+        private static Bullet __Bullet;
+        private static Spaceship __Spaceship;
 
         /// <summary> Ширина игрового поля </summary>
         public static int Width { get; private set; }
@@ -61,6 +63,8 @@ namespace GameAsteroid
             foreach (var game_object in __GameObjects)
                 game_object.Draw(g);
 
+            __Bullet.Draw(g);
+
             __Buffer.Render();
         }
 
@@ -84,6 +88,17 @@ namespace GameAsteroid
                     10));
             }
 
+            var rnd = new Random();
+            const int asteroid_count = 10;
+            const int asteroid_size = 25;
+            const int asteroid_max_speed = 20;
+            for (var i = 0; i < asteroid_count; i++)
+                game_objects.Add(new Asteroid(
+                    new Point(rnd.Next(0, Width), rnd.Next(0, Height)),
+                    new Point(-rnd.Next(0, asteroid_max_speed), 0),
+                    asteroid_size));
+
+            __Bullet = new Bullet(200);
             __GameObjects = game_objects.ToArray();
         }
 
@@ -91,6 +106,8 @@ namespace GameAsteroid
         {
             foreach (var game_object in __GameObjects)
                 game_object.Update();
+
+            __Bullet.Update();
         }
     }
 
