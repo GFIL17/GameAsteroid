@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System.IO;
 using TestConsole.Loggers;
+using System.Diagnostics;
 
 namespace TestConsole
 {
@@ -15,15 +16,32 @@ namespace TestConsole
         {
             // Logger log = new TextFileLogger("text.log");
             //Logger log = new ConsoleLogger();
-            Logger log = new DebugOutputLogger();
+            //Logger log = new DebugOutputLogger();
+            Logger log = new TraceLogger();
 
+            
+            Trace.Listeners.Add(new TextWriterTraceListener("logger.log"));
+            Trace.Listeners.Add(new XmlWriterTraceListener("logger.log.xml"));
+
+            //CombineLogger combine_log = new CombineLogger();
+            //combine_log.Add(new ConsoleLogger());
+            //combine_log.Add(new DebugOutputLogger());
+            //combine_log.Add(new TraceLogger());
+            //combine_log.Add(new TextFileLogger("new_log.log"));
+
+            //ILogger log = combine_log;
             log.LogInformation("Message1");
             log.LogWarning("Info message");
             log.LogError("Error message");
 
+            //ComputeLongDataValue(100, log);
+
+            //Console.WriteLine("Программа завершена!");
+            //Console.ReadLine();
+
             log.Flush();
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }    
 }
