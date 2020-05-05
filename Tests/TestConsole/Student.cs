@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestConsole
 {
-    internal class Student : ILogger
+    internal class Student
     {
         public int Id { get; set; }
 
@@ -17,10 +17,6 @@ namespace TestConsole
         public string Petronimyc { get; set; }
 
         public int GroupId { get; set; }
-
-        public void Log(string Message)
-        {
-            Console.WriteLine("Студент {0} пишет в журнал: {1}", Name, Message);;
-        }
+        
     }
 }
