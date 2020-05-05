@@ -36,14 +36,27 @@ namespace TestConsole
             log.LogWarning("Info message");
             log.LogError("Error message");
 
-            //ComputeLongDataValue(100, log);
+            ComputeLongDataValue(100, log);
 
-            //Console.WriteLine("Программа завершена!");
-            //Console.ReadLine();
+            Console.WriteLine("Программа завершена!");
+            Console.ReadLine();
 
             log.Flush();
 
-            Console.ReadLine();
+            //Console.ReadLine();
+        }
+
+        private static double ComputeLongDataValue(int Count, Logger Log)
+        {
+            var result = 0;
+            for (var i=0; i < Count; i++)
+            {
+                result++;
+                Log.LogInformation("Вычисление итерации {i}");
+                System.Threading.Thread.Sleep(100);
+            }
+
+            return result;
         }
     }    
 }
