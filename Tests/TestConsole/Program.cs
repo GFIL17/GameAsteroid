@@ -23,15 +23,15 @@ namespace TestConsole
             Trace.Listeners.Add(new TextWriterTraceListener("logger.log"));
             Trace.Listeners.Add(new XmlWriterTraceListener("logger.log.xml"));
 
-            //CombineLogger combine_log = new CombineLogger();
-            CombineLogger log = new CombineLogger();
+            CombineLogger combine_log = new CombineLogger();
+            //CombineLogger log = new CombineLogger();
             
-            log.Add(new ConsoleLogger());
-            log.Add(new DebugOutputLogger());
-            log.Add(new TraceLogger());
-            log.Add(new TextFileLogger("new_log.log"));
+            combine_log.Add(new ConsoleLogger());
+            combine_log.Add(new DebugOutputLogger());
+            combine_log.Add(new TraceLogger());
+            combine_log.Add(new TextFileLogger("new_log.log"));
 
-            //ILogger log = combine_log;
+            ILogger log = combine_log;
             log.LogInformation("Message1");
             log.LogWarning("Info message");
             log.LogError("Error message");
@@ -41,12 +41,10 @@ namespace TestConsole
             Console.WriteLine("Программа завершена!");
             Console.ReadLine();
 
-            log.Flush();
-
-            //Console.ReadLine();
+            combine_log.Flush();            
         }
 
-        private static double ComputeLongDataValue(int Count, Logger Log)
+        private static double ComputeLongDataValue(int Count, ILogger Log)
         {
             var result = 0;
             for (var i=0; i < Count; i++)
