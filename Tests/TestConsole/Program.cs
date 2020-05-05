@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using TestConsole.Loggers;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 
 namespace TestConsole
 {
@@ -39,14 +40,37 @@ namespace TestConsole
             Student student = new Student { Name = "Иванов" };
 
             ILogger log = combine_log;
-            ComputeLongDataValue(100, student);
+            //ComputeLongDataValue(100, student);
 
-            Console.WriteLine("Программа завершена!");
-            //Console.ReadLine();
+            //Console.WriteLine("Программа завершена!");
+            ////Console.ReadLine();
 
-            using (var file_logger = new TextFileLogger("another.log"))
+            //using (var file_logger = new TextFileLogger("another.log"))
+            //{
+            //    file_logger.LogInformation("123");
+            //}
+
+            try
             {
-                file_logger.LogInformation("123");
+                ComputeLongDataValue(600, log);
+            }
+            catch (ApplicationException error)
+            {
+                combine_log.LogError(error.ToString());
+                combine_log.LogError(error.Message);
+                throw new ComputeExeptionExeption("Ошибка в значении входного параметра", error);
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine("Число итераций слишком велико!");
+                throw;
+            }
+            catch (Exception error)
+            {
+                combine_log.LogError(error.ToString());
+                combine_log.LogError(error.Message);
+                throw new ComputeExeptionExeption("Произошла неизвестная ошибка при вычислении", error);
+
             }
 
             combine_log.Flush();            
@@ -54,15 +78,45 @@ namespace TestConsole
 
         private static double ComputeLongDataValue(int Count, ILogger Log)
         {
+            if (Log is null)
+                //throw new ArgumentNullException("Log");
+                throw new ArgumentNullException(nameof(Log));
+
+            if (Count <= 0)
+                throw new ArgumentOutOfRangeException(nameof(Count), Count, "Число итераций обязано быть больше нуля!");
+
+
             var result = 0;
             for (var i=0; i < Count; i++)
             {
                 result++;
                 Log.Log($"Вычисление итерации {i}");
-                System.Threading.Thread.Sleep(100);
+                System.Threading.Thread.Sleep(10);
+
+                if (i > 500)
+                    throw new InvalidOperationException("Число итераций оказалось слишком большим!",
+                        new ArgumentException("Число итераций было казано выше  500 и равно {Count}", nameof(Count)));
+
             }
 
             return result;
         }
-    }    
+    }  
+    
+    [Serializable]
+
+    public class ComputeExeptionExeption : Exception
+    {
+        public ComputeExeptionExeption() { }
+
+        public ComputeExeptionExeption(string message) : base(message) { }
+
+        public ComputeExeptionExeption(string message, Exception inner) : base(message, inner) { }
+
+        protected ComputeExeptionExeption(
+            SerializationInfo info,
+            StreamingContext context) : base(info, context)
+        {
+        }
+    }
 }
