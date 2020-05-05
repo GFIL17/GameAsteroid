@@ -17,17 +17,19 @@ namespace TestConsole
             // Logger log = new TextFileLogger("text.log");
             //Logger log = new ConsoleLogger();
             //Logger log = new DebugOutputLogger();
-            Logger log = new TraceLogger();
+            //Logger log = new TraceLogger();
 
             
             Trace.Listeners.Add(new TextWriterTraceListener("logger.log"));
             Trace.Listeners.Add(new XmlWriterTraceListener("logger.log.xml"));
 
             //CombineLogger combine_log = new CombineLogger();
-            //combine_log.Add(new ConsoleLogger());
-            //combine_log.Add(new DebugOutputLogger());
-            //combine_log.Add(new TraceLogger());
-            //combine_log.Add(new TextFileLogger("new_log.log"));
+            CombineLogger log = new CombineLogger();
+            
+            log.Add(new ConsoleLogger());
+            log.Add(new DebugOutputLogger());
+            log.Add(new TraceLogger());
+            log.Add(new TextFileLogger("new_log.log"));
 
             //ILogger log = combine_log;
             log.LogInformation("Message1");
@@ -41,7 +43,7 @@ namespace TestConsole
 
             log.Flush();
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }    
 }
