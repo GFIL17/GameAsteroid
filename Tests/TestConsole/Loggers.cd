@@ -9,21 +9,21 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TestConsole.Loggers.ConsoleLogger" Collapsed="true">
-    <Position X="2" Y="3.75" Width="1.5" />
+    <Position X="5.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Loggers\ConsoleLogger.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TestConsole.Loggers.DebugOutputLogger" Collapsed="true">
-    <Position X="4.25" Y="3.75" Width="1.5" />
+    <Position X="8" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Loggers\DebugOutputLogger.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TestConsole.Loggers.TextFileLogger" Collapsed="true">
-    <Position X="6.5" Y="3.75" Width="1.5" />
+    <Position X="10" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABCAAAAAAAAAAAgAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>Loggers\TextFileLogger.cs</FileName>
@@ -32,8 +32,23 @@
   <Class Name="TestConsole.Student">
     <Position X="10.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAEAAAAAAAAAAAAAAQABAAAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAEAAAAAAAAAAAAAAQABAgAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Student.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestConsole.Loggers.CombineLogger" Collapsed="true">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Loggers\CombineLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestConsole.Loggers.TraceLogger" Collapsed="true">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Loggers\TraceLogger.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
