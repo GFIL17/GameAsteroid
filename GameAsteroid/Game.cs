@@ -61,9 +61,11 @@ namespace GameAsteroid
             //g.FillEllipse(Brushes.Red, new Rectangle(100, 50, 70, 120));
 
             foreach (var game_object in __GameObjects)
-                game_object.Draw(g);
+                game_object?.Draw(g);
 
-            __Bullet.Draw(g);
+            //if (__Bullet != null)
+            //    __Bullet.Draw(g); - эквивалент
+            __Bullet?.Draw(g);
 
             __Buffer.Render();
         }
@@ -105,9 +107,30 @@ namespace GameAsteroid
         public static void Update()
         {
             foreach (var game_object in __GameObjects)
-                game_object.Update();
+                game_object?.Update();
 
-            __Bullet.Update();
+            __Bullet?.Update();
+            if (__Bullet is null || __Bullet.Rect.Left > Width)
+            {
+                var rnd = new Random();
+                __Bullet = new Bullet(rnd.Next(0, Height));
+            }
+
+            for (var i =0; i < __GameObjects.Length; i++)
+            {
+                var obj = __GameObjects[i];
+                if (obj is ICollision)
+                {
+                    var collision_object = (ICollision)obj;
+                    if (__Bullet !=null)
+                        if (__Bullet.CheckCollision(collision_object))
+                        {
+                            __Bullet = null;
+                            __GameObjects[i] = null;
+                            System.Media.SystemSounds.Beep.Play();
+                        }
+                }
+            }
         }
     }
 

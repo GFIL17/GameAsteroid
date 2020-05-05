@@ -17,7 +17,7 @@ namespace GameAsteroid.VisualObjects
         {
             get
             {
-                return new Rectangle(_Direction, _Size);
+                return new Rectangle(_Position, _Size);
             }
         }
         public bool CheckCollision(ICollision obj) => Rect.IntersectsWith(obj.Rect);
