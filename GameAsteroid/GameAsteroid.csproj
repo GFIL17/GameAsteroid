@@ -79,6 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\miscellaneous.png" />
+    <None Include="Resources\game.png" />
+    <None Include="Resources\rocket.png" />
+    <None Include="Resources\transportation.png" />
     <Content Include="src\miscellaneous.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

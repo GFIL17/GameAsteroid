@@ -63,9 +63,39 @@ namespace GameAsteroid.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap game {
+            get {
+                object obj = ResourceManager.GetObject("game", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap miscellaneous {
             get {
                 object obj = ResourceManager.GetObject("miscellaneous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rocket {
+            get {
+                object obj = ResourceManager.GetObject("rocket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transportation {
+            get {
+                object obj = ResourceManager.GetObject("transportation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
