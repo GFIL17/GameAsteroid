@@ -9,7 +9,7 @@ namespace TestConsole
 {
     internal abstract class Storage<TItem> : IEnumerable<TItem>
     {
-        private readonly List<TItem> _Items = new List<TItem>();
+        protected readonly List<TItem> _Items = new List<TItem>();
 
         public int Count => _Items.Count;
 

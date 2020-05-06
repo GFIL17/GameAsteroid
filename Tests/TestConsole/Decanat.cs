@@ -7,7 +7,7 @@ using System.IO;
 
 namespace TestConsole
 {
-    internal class Decanat : Storage<Student>
+    internal class Decanat : EntityStorage<Student>
     {
         public override void SaveToFile(string FileName)
         {
@@ -41,7 +41,7 @@ namespace TestConsole
                         Patronimyc = components[2]
                     };
 
-                    var ratings = components[3].Split(',');
+                    var ratings = components[3].Split(';');
                     foreach (var rating in ratings)
                         student.Ratings.Add(int.Parse(rating));
 
