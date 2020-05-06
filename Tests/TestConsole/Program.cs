@@ -12,6 +12,8 @@ using TestConsole.Service;
 
 namespace TestConsole
 {
+    internal delegate int StringProcessor(string str);
+
     class Program
     {
         static void Main(string[] args)
@@ -48,8 +50,17 @@ namespace TestConsole
             var decanat2 = new Decanat();
             decanat2.LoadFromFile("decanat.csv");
 
+            StringProcessor str_processor = new StringProcessor(GetStringLength);
+
+            var length = str_processor("Hello world");
+
             Console.ReadLine();
 
+        }
+
+        private static int GetStringLength(string str)
+        {
+            return str.Length;
         }
     }
 }
