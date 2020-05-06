@@ -47,6 +47,13 @@ namespace TestConsole
             _Items.Clear();
         }
 
+        public abstract void SaveToFile(string FileName);
+
+        public virtual void LoadFromFile(string Filename)
+        {
+            Clear();
+        }
+
         public IEnumerator<TItem> GetEnumerator()
         {
             return _Items .GetEnumerator();

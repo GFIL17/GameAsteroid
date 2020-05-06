@@ -40,8 +40,13 @@ namespace TestConsole
 
             var random_student = new Student { Name = rnd.GetValue("Иванов", "Петров", "Сидоров", "Филин", "Бондарчук", "Лихачев") };
 
-            
+
             // var random_rating = rnd.GetValue<int>(2, 3, 4, 5);  // числовой рандомайзер
+
+            decanat.SaveToFile("decanat.csv");
+
+            var decanat2 = new Decanat();
+            decanat2.LoadFromFile("decanat.csv");
 
             Console.ReadLine();
 
