@@ -17,8 +17,10 @@ namespace GameAsteroid.VisualObjects
 
         public Rectangle Rect => new Rectangle(_Position, _Size);        
 
-        public Spaceship(Point Position, Point Direction, Size Size) : base(Position, Direction, Size)
+        public Spaceship(Point Position, Point Direction, Size Size) 
+            : base(Position, Direction, Size)
         {
+
         }
 
         public override void Draw(Graphics g)
@@ -39,7 +41,7 @@ namespace GameAsteroid.VisualObjects
 
             if (is_collision && obj is Asteroid asteroid)
             {
-                ChangeEnergy(asteroid.Power);
+                ChangeEnergy(-asteroid.Power);
             }
 
             return is_collision;
