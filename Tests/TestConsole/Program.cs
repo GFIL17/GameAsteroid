@@ -22,6 +22,8 @@ namespace TestConsole
         {
             var decanat = new Decanat();
 
+            decanat.SubscribeToAdd(PrintStudent);
+
             var rnd = new Random();
 
             for (var i = 1; i <= 100; i++)
