@@ -90,6 +90,7 @@ namespace GameAsteroid
         {
             Graphics g = __Buffer.Graphics;
 
+            //Background
             g.Clear(Color.Black);
             //g.DrawRectangle(Pens.White, new Rectangle(50, 50, 200, 200));
             //g.FillEllipse(Brushes.Red, new Rectangle(100, 50, 70, 120));
@@ -148,8 +149,8 @@ namespace GameAsteroid
         {
             __Timer.Stop();
             var g = __Buffer.Graphics;
-            g.Clear(Color.DarkBlue);
-            g.DrawString("Game over!!!", new Font(FontFamily.GenericSerif, 60, FontStyle.Bold), Brushes.Red, 200, 100);
+            g.Clear(Color.Black);
+            g.DrawString("Game over!!!", new Font(FontFamily.GenericSerif, 40, FontStyle.Bold), Brushes.White, 200, 200);
             __Buffer.Render();
         }
 

@@ -82,6 +82,10 @@
     <None Include="Resources\game.png" />
     <None Include="Resources\rocket.png" />
     <None Include="Resources\transportation.png" />
+    <None Include="Resources\93121.jpg" />
+    <None Include="Resources\290061-P6O4SC-288.jpg" />
+    <None Include="Resources\space.jpg" />
+    <None Include="Resources\space2.jpg" />
     <Content Include="src\miscellaneous.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
