@@ -24,5 +24,10 @@ namespace TextEditorWPF
         {
             InitializeComponent();
         }
+
+        private void OnCloseMenuItemClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
