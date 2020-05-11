@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,36 @@ namespace TextEditorWPF
         private void OnCloseMenuItemClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void OnOpenFileMenuClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog
+            {
+                Title = "Выбор файла для редактирования",
+                Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*",
+            };
+
+            if (dialog.ShowDialog() != true) return;
+
+            var file_name = dialog.FileName;
+
+            MainTextEdit.Text = File.ReadAllText(file_name);
+        }
+
+        private void OnSaveFileMenuClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = new SaveFileDialog
+            {
+                Title = "Выбор файла для редактирования",
+                Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*",
+            };
+
+            if (dialog.ShowDialog() != true) return;
+
+            var file_name = dialog.FileName;
+
+            File.WriteAllText(file_name, MainTextEdit.Text);
         }
     }
 }
