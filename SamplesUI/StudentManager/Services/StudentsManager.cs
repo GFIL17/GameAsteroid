@@ -19,6 +19,7 @@ namespace StudentManager.Services
                .Select(i => new StudentsGroup
                {
                    Id = i,
+                   Name = $"Group {i}",
                    Students = Enumerable
                        .Range(1, 10)
                        .Select(j => new Student
