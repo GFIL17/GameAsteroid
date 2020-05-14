@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditorWinForms", "Sampl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditorWPF", "SamplesUI\TextEditorWPF\TextEditorWPF.csproj", "{506CF9F4-4AF3-42C6-9CEB-33E188A6360A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsManager", "SamplesUI\StudentManager\StudentsManager.csproj", "{1D850872-334C-4A4E-853A-2F4D44CFDF14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{506CF9F4-4AF3-42C6-9CEB-33E188A6360A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{506CF9F4-4AF3-42C6-9CEB-33E188A6360A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{506CF9F4-4AF3-42C6-9CEB-33E188A6360A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D850872-334C-4A4E-853A-2F4D44CFDF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D850872-334C-4A4E-853A-2F4D44CFDF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D850872-334C-4A4E-853A-2F4D44CFDF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D850872-334C-4A4E-853A-2F4D44CFDF14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{774F6285-8CA8-47D3-9273-C780DFFCC03B} = {9EDC8E9E-F4D5-4743-B25D-94A8750E300A}
 		{6AA50D87-6630-4798-97EF-4A1130392D87} = {B822D2D8-3235-4A5C-A07B-64FE07EECCD3}
 		{506CF9F4-4AF3-42C6-9CEB-33E188A6360A} = {B822D2D8-3235-4A5C-A07B-64FE07EECCD3}
+		{1D850872-334C-4A4E-853A-2F4D44CFDF14} = {B822D2D8-3235-4A5C-A07B-64FE07EECCD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A0957AF-2BCA-4539-9AB0-EA6AC1498CF5}
