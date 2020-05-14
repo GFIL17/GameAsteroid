@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace StudentManager.Models
 {
-    class StudentsGroup
+    internal class StudentsGroup
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Student> Students { get; set; } = new List<Student>();
     }
 }
