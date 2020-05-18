@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentsDatabaseTest.Data.Entityes
 {
@@ -18,6 +19,10 @@ namespace StudentsDatabaseTest.Data.Entityes
 
         public string Patronymic { get; set; }
 
+        //[Column("Group_ID")]
+        //public int GroupId { get; set; }
+
+        //[ForeignKey("Group_ID")]
         public StudentsGroup Group { get; set; }
 
         public ICollection<Course> Courses { get; set; }
