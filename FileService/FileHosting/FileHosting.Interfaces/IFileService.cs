@@ -11,7 +11,7 @@ using FileHosting.Interfaces.DataModels;
 namespace FileHosting.Interfaces
 {
     [ServiceContract]
-    interface IFileService
+    public interface IFileService
     {
         [OperationContract]
         DateTime GetServiceTime();
